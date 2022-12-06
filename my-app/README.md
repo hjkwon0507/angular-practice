@@ -1,3 +1,3 @@
 # My App
 
-[공식 문서](https://angular.kr/start)
+[공식 문서 튜토리얼](https://angular.kr/start)
