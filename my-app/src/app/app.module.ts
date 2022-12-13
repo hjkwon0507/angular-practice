@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http'
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', component: ProductListComponent},
       {path: 'products/:productId', component: ProductDetailsComponent},
