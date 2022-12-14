@@ -23,7 +23,7 @@ export class CartComponent {
 
   onSubmit(): void {
     this.items = this.cartService.clearCart()
-    console.log(this.checkoutForm.value)
-    // this.checkoutForm.reset()
+    console.warn(this.checkoutForm.value)
+    this.checkoutForm.reset()
   }
 }
