@@ -8,7 +8,7 @@ import { FormBuilder, Validators } from '@angular/forms';
       <div class="form-container">
         <div class="title">Register Here</div>
         <br/><br/>
-        <form [formGroup]="registerForm">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="outline">
             <mat-label>Enter your email</mat-label>
             <input matInput formControlName="email" />
@@ -33,16 +33,17 @@ import { FormBuilder, Validators } from '@angular/forms';
               }}
             </mat-error>
           </mat-form-field>
+          <div class="buttons-container">
+            <button
+              mat-raised-button
+              class="register-button"
+              [disabled]="registerForm.invalid"
+              type="submit"
+            >
+              Register
+            </button>
+          </div>
         </form>
-        <div class="buttons-container">
-          <button
-            mat-raised-button
-            class="register-button"
-            [disabled]="registerForm.invalid"
-          >
-            Register
-          </button>
-        </div>
       </div>
     </div>
   `,
@@ -57,4 +58,8 @@ export class RegisterComponent {
     email: ['', [Validators.required, Validators.email],],
     password: ['', [Validators.required, Validators.minLength(6)]],
   })
+
+  onSubmit(): void { 
+    console.log(this.registerForm.value)
+  }
 }
